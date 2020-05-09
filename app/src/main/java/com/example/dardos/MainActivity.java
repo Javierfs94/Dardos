@@ -20,13 +20,18 @@ public class MainActivity extends AppCompatActivity {
     int puntuacionJugador2 = 351;
     int puntuacionJugador3 = 351;
     int puntuacionJugador4 = 351;
+    Button buttonx2;
+    Button buttonx3;
+    Button buttonP1;
+    Button buttonP2;
+    Button buttonP3;
+    Button buttonP4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Botones puntos
         final Button button1 = (Button) findViewById(R.id.button1);
         final Button button2 = (Button) findViewById(R.id.button2);
         final Button button3 = (Button) findViewById(R.id.button3);
@@ -49,18 +54,13 @@ public class MainActivity extends AppCompatActivity {
         final Button button20 = (Button) findViewById(R.id.button20);
         final Button button25 = (Button) findViewById(R.id.button25);
         final Button button50 = (Button) findViewById(R.id.button50);
-        final Button buttonx2 = (Button) findViewById(R.id.buttonx2);
-        final Button buttonx3 = (Button) findViewById(R.id.buttonx3);
-
-       // Botones jugadores
-        final Button buttonP1 = (Button) findViewById(R.id.buttonP1);
-        final Button buttonP2 = (Button) findViewById(R.id.buttonP2);
-        final Button buttonP3 = (Button) findViewById(R.id.buttonP3);
-        final Button buttonP4 = (Button) findViewById(R.id.buttonP4);
-
-        // Funcionalidades
+        buttonx2 = (Button) findViewById(R.id.buttonx2);
+        buttonx3 = (Button) findViewById(R.id.buttonx3);
+        buttonP1 = (Button) findViewById(R.id.buttonP1);
+        buttonP2 = (Button) findViewById(R.id.buttonP2);
+        buttonP3 = (Button) findViewById(R.id.buttonP3);
+        buttonP4 = (Button) findViewById(R.id.buttonP4);
         final Button reset = (Button) findViewById(R.id.reset);
-
 
         buttonP1.setOnClickListener(cambiarJugador);
         buttonP2.setOnClickListener(cambiarJugador);
@@ -103,8 +103,6 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener calcularPuntos = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            final Button buttonx2 = (Button) findViewById(R.id.buttonx2);
-            final Button buttonx3 = (Button) findViewById(R.id.buttonx3);
             puntuacion =  Integer.parseInt(textPuntos.getText().toString());
             int puntos = 0;
             switch(v.getId()){
@@ -221,8 +219,6 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener multiplicarPuntos = new View.OnClickListener() {
        @Override
         public void onClick(View v) {
-           final Button buttonx2 = (Button) findViewById(R.id.buttonx2);
-           final Button buttonx3 = (Button) findViewById(R.id.buttonx3);
             puntuacion =  Integer.parseInt(textPuntos.getText().toString());
             int puntos = 0;
             switch(v.getId()){
@@ -242,10 +238,6 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener cambiarJugador = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            final Button buttonP1 = (Button) findViewById(R.id.buttonP1);
-            final Button buttonP2 = (Button) findViewById(R.id.buttonP2);
-            final Button buttonP3 = (Button) findViewById(R.id.buttonP3);
-            final Button buttonP4 = (Button) findViewById(R.id.buttonP4);
             switch(v.getId()){
                 case R.id.buttonP1:
                     jugadorActivo = 1;
